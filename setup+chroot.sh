@@ -43,15 +43,13 @@ chmod +x /mnt/gentoo/post_chroot.sh
 
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
-mount --make-rslave /mnt/gentoo/sys
 mount --rbind /dev /mnt/gentoo/dev
-mount --make-rslave /mnt/gentoo/dev
 
 rm -rf /portage
 printf "clened up files\n"
 printf "mounted all the things\n"
 printf "you should now chroot into the new environment\n"
-chroot /mnt/gentoo post_chroot.sh
+chroot /mnt/gentoo /bin/bash
 printf ${PURPLE}"chroot /mnt/gentoo /bin/bash"
 printf ${PURPLE}"source /etc/profile"
 printf ${PURPLE}"export PS1=\"(chroot) \${PS1}\""
