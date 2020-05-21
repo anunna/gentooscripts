@@ -8,11 +8,10 @@ stage3=$(ls stage3*)
 printf "found %s\n" $stage3
 tar xpvf $stage3 --xattrs-include='*.*' --numeric-owner
 
-cd
-wget https://github.com/anunna/gentooscripts/archive/master.zip /mnt/gentoo/script.zip
-unzip /mnt/gentoo/script.zip
+wget https://github.com/anunna/gentooscripts/archive/master.zip
+unzip /mnt/gentoo/master.zip
 mkdir /mnt/gentoo/etc/portage/backup
-unzip /mnt/gentoo/script/gentoo/portage.zip
+unzip /mnt/gentoo/master/gentoo/portage.zip
 
 #mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/backup/
 printf "moved old make.conf to /backup/\n"
