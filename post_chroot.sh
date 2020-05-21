@@ -3,7 +3,7 @@
 #source /etc/profile
 #export PS1="(chroot) ${PS1}"
 
-cd gentootestscript-master
+cd /mnt/gentoo/script/
 scriptdir=$(pwd)
 cd ..
 LIGHTGREEN='\u001b[36m'
