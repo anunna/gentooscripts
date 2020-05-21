@@ -6,6 +6,6 @@ Scripts for conveniently installing Hardened Gentoo in KVM or physical, includes
 
 Download the required script file and run the script.
 
-        # wget wget https://raw.githubusercontent.com/anunna/gentooscripts/master/setup+chroot.sh
+        # wget https://raw.githubusercontent.com/anunna/gentooscripts/master/setup+chroot.sh
         # chmod +x setup+chroot.sh
         # ./setup+chroot.sh
