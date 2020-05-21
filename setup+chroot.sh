@@ -9,7 +9,7 @@ printf "found %s\n" $stage3
 tar xpvf $stage3 --xattrs-include='*.*' --numeric-owner
 
 cd
-wget https://github.com/anunna/gentooscripts/archive/master.zip /mnt/gentoo/script.zip
+wget https://github.com/anunna/gentooscripts/blob/master/gentoo/portage.zip /mnt/gentoo/script.zip
 unzip /mnt/gentoo/script.zip
 mkdir /mnt/gentoo/etc/portage/backup
 unzip /mnt/gentoo/script/gentoo/portage.zip
