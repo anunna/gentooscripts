@@ -3,6 +3,7 @@
 
 PURPLE='\u001b[36m'
 
+# Extract stage tarball
 cd /mnt/gentoo/
 stage3=$(ls stage3*)
 printf "found %s\n" $stage3
@@ -11,7 +12,7 @@ tar xpvf $stage3 --xattrs-include='*.*' --numeric-owner
 wget https://github.com/anunna/gentooscripts/archive/master.zip
 unzip /mnt/gentoo/master.zip
 mkdir /mnt/gentoo/etc/portage/backup
-unzip /mnt/gentoo/master/gentoo/portage.zip
+unzip /mnt/gentoo/gentooscripts-master/gentoo/portage.zip
 
 #mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/backup/
 printf "moved old make.conf to /backup/\n"
