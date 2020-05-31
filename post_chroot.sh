@@ -96,8 +96,8 @@ fi
 sed -i -e "s/localhost/$hostname/g" /etc/conf.d/hostname
 emerge --noreplace net-misc/netifrc
 printf "config_enp0s3=\"dhcp\"\n" >> /etc/conf.d/net
-printf "/dev/vda1\t\t/boot\t\text4\t\tdefaults,noatime\t0 2\n" >> /etc/fstab
-printf "/dev/vda2\t\t/\t\text4\t\tnoatime\t0 1\n" >> /etc/fstab
+printf "/dev/sda1\t\t/boot\t\text4\t\tdefaults,noatime\t0 2\n" >> /etc/fstab
+printf "/dev/sda2\t\t/\t\text4\t\tnoatime\t0 1\n" >> /etc/fstab
 cd /etc/init.d
 ln -s net.lo net.enp0s3
 rc-update add net.enp0s3 default
@@ -112,11 +112,14 @@ rc-update add sysklogd default
 emerge sys-apps/mlocate
 emerge net-misc/dhcpcd
 
+#shell
+emerge app-shells/zsh
+
 #installs grub
 emerge --verbose sys-boot/grub:2
-grub-install /dev/vda
+grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-useradd -m -G users,wheel,audio -s /bin/bash $username
+useradd -m -G users,wheel,audio -s /bin/zsh $username
 cd ..
 printf "cleaning up\n"
 mv gentootestscript-master.zip /home/$username
