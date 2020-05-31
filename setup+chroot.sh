@@ -17,22 +17,22 @@ unzip /mnt/gentoo/gentooscripts-master/gentoo/portage.zip
 #mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/backup/
 printf "moved old make.conf to /backup/\n"
 #copies our pre-made make.conf over
-cp /mnt/gentoo/portage/make.conf /mnt/gentoo/etc/portage/
+\cp make.conf /mnt/gentoo/etc/portage/
 printf "copied new make.conf to /etc/portage/\n"
 
 #copies specific package.use stuff over
-cp -a /mnt/gentoo/portage/package.use/. /mnt/gentoo/etc/portage/package.use/
+cp -a package.use/. /mnt/gentoo/etc/portage/package.use/
 printf "copied over package.use files to /etc/portage/package.use/\n"
 
 #copies specific package stuff over (this might not be necessary)
-cp /mnt/gentoo/portage/linux_drivers /mnt/gentoo/etc/portage/
-cp /mnt/gentoo/portage/package.license /mnt/gentoo/etc/portage
-cp /mnt/gentoo/portage/package.accept_keywords /mnt/gentoo/etc/portage/
+cp linux_drivers /mnt/gentoo/etc/portage/
+cp package.license /mnt/gentoo/etc/portage
+cp package.accept_keywords /mnt/gentoo/etc/portage/
 printf "copied over specific package stuff\n"
 
 #gentoo ebuild repository
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
-cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+cp repos.conf/gentoo.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
 
 printf "copied gentoo repository to repos.conf\n"
 
@@ -40,7 +40,7 @@ printf "copied gentoo repository to repos.conf\n"
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
 printf "copied over DNS info\n"
 
-cp /mnt/gentoo/script/post_chroot.sh /mnt/gentoo/
+cp /mnt/gentoo/gentooscripts-master/post_chroot.sh /mnt/gentoo/
 printf "copied post_chroot.sh to /mnt/gentoo\n"
 chmod +x /mnt/gentoo/post_chroot.sh
 
